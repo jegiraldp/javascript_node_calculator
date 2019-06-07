@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cuadrado</title>
+    <link rel="stylesheet" type="text/css" href="css/calculadora.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/calcuadrado">Calcular Cuadrado</a></li>
+      </ul>
+    </nav>
+    <hr/>
+    <form action="/calcuadrado" method="post">
+      Digite número:<input type="text" name="txtNum" value="" />
+      <input type="submit" name="" value="Calcular">
+    </form>
+    <hr/>
+    <div id="escondido">
+      <% if (cuadrado) { %>
+        <p>El cuadrado de <%= numero %> es: <%= cuadrado %></p>
+      <% } %>
+    </div>
+  </body>
+</html>
