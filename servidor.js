@@ -27,18 +27,15 @@ app.post('/calcuadrado',(req,res)=> {
   const nume = req.body.txtNum;
   const cuadrado=cua.calcular(nume);
   res.render('calculadora.ejs',{cuadrado:cuadrado,numero:nume});
+
 });
 
 app.get('*',(req,res,next)=> {
-  res.write('<b>Error de URL -- Confirmar </b><br/>');
-  res.end('Done');
+  const error='Error de URL -- Confirmar';
+  res.end(error);
 });
 
 var port = process.env.PORT || 8080;
-
-/*const server = app.listen(3000,()=>{
-    console.log("server ok -- :) -- "+app.get('appName')+' -- Ctrl-C para terminar.' );
-});*/
 
 const server = app.listen(port,()=>{
     console.log("server ok -- :) -- ");

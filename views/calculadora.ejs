@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta charset="utf-8">
     <title>Cuadrado</title>
     <link rel="stylesheet" type="text/css" href="css/calculadora.css" />
@@ -13,15 +14,17 @@
       </ul>
     </nav>
     <hr/>
-    <form action="/calcuadrado" method="post">
-      Digite número:<input type="text" name="txtNum" value="" />
-      <input type="submit" name="" value="Calcular">
+    <form id="f1" action="/calcuadrado" method="post">
+      Digite número:<input type="text" id="txtNum" name="txtNum" value="" />
+      <input type="button" id="boton" name="" value="Calcular">
     </form>
     <hr/>
-    <div id="escondido">
+    <div id="divrespuesta">
       <% if (cuadrado) { %>
         <p>El cuadrado de <%= numero %> es: <%= cuadrado %></p>
       <% } %>
     </div>
+    <div id="diverror"></div>
+    <script src="js/inicio.js"></script>
   </body>
 </html>
